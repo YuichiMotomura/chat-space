@@ -45,13 +45,13 @@
 
 
 
-##users_groupsテーブル
+## users_groupsテーブル
 | Column    | Type    | Options                        |
 | --------- | ------- | ------------------------------ |
 | users_id  | integer | null: false, foreign_key: true |
 | groups_id | integer | null: false, foreign_key: true |
 
-###Association
+### Association
 
 - belongs_to :user
 - belongs_to :group
