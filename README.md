@@ -37,7 +37,7 @@
 | user_id    | integer | null: false, foreign_key: true  |
 | message_id | integer | unique: true, foreign_key: true |
 
-###Association
+### Association
 
 - has_many :messages
 - has_many :users_groups
