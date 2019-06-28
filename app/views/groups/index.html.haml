@@ -1,5 +1,5 @@
 .Sidebar
-  = render "messages/shared/side_bar"
+  = render 'groups/shared/side_bar'
 .Main
   .Main__group
     .Main__group__info
@@ -7,7 +7,7 @@
       %ul.Main__group__info__members
         %li.Main__group__info__members__member Member :&nbsp;
         %li.Main__group__info__members__member yu1
-    = link_to '/hoge', class: 'Main__group__btn' do
+    = link_to edit_group_path(1), class: 'Main__group__btn' do
       %p Edit
 
     

@@ -1,0 +1,108 @@
+.Main {
+  width: calc(100vw - 300px);
+  float: right;
+  height: 100vh;
+  &__group {
+    height: 100px;
+    padding: 0 40px;
+    @include clearfix();
+    &__info {
+      display: inline-block;
+      &__title {
+        padding-top: 35px;
+        color: $main-black;
+        @include box(null, null, 15px, 20px, null);
+      }
+      &__members {
+        color: $main-gray;
+        font-size: 12px;
+        & li {
+          list-style: none;
+          float: left;
+        }
+      }
+    }
+    &__btn {
+      @include btn(null, 40px, 20px, 16px, #38AEF0);
+      float: right;
+      margin-top: 28px;
+    }
+  }
+  &__messages {
+    height: calc(100vh - 191px);
+    padding: 0 40px;
+    background-color: #fafafa;
+    border-top: 1px solid #eeeeee;
+    overflow: scroll;
+    &__wrapper {
+      padding-top: 46px;
+      &__message {
+        position: relative;
+        margin-bottom: 40px;
+        &__info {
+          margin-bottom: 10px;
+          &__userName {
+            display: inline-block;
+            font-size: 16px;
+            color: $main-navy;
+            font-weight: bold;
+          }
+          &__createdAt{
+            display: inline-block;
+            font-size: 12px;
+            color:$main-gray;
+            position: absolute;
+            padding-left: 10px;
+            top: 0;
+          }
+        }
+        &__text {
+          color: $main-navy;
+          font-size: 14px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+  &__form {
+    height: 90px;
+    background-color: #dddddd;
+    & form {
+    padding: 20px 40px;
+    }
+    & ul li {
+      list-style: none;
+      float: left;
+    }
+    &__textarea {
+      height: 50px;
+      width: calc(100vw - 300px - 80px - 100px);
+      position: relative;
+      & input {
+        height: 50px;
+        width: calc(100vw - 300px - 80px - 100px - 15px - 20px);
+        padding: 0 10px;
+        color: $main-navy;
+      }
+      & ul li {
+        list-style: none;
+        float: left;
+      }
+      &__icon {
+        font-size: 22px;
+        position: absolute;
+        right: 25px;
+        top: 12.5px;
+        &__hidden {
+          display: none;
+        }
+      }
+      
+    }
+    &__sendBtn input {
+      @include btn(100px, 50px, 0, null, #38aef0);
+      background-color: #38aef0;
+      color: $sidebar-white;
+    }  
+  }
+}
