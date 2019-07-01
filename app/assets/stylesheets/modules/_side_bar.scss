@@ -1,0 +1,53 @@
+.Sidebar {
+  width: 300px;
+  height: 100vh;
+  color: $sidebar-white;
+  float: left;
+  background-color: #2f3e51;
+  &__userName {
+    @include clearfix();
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
+    &__name {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 100px;
+    }
+    &__btns {
+      line-height: 100px;
+      color: $sidebar-white;
+      float: right;
+      & li {
+        list-style: none;
+        float: right;
+        margin-left: 5px;
+        & a {
+          color: $sidebar-white;
+        }
+      }
+    }
+  }
+  &__indexes {
+   height: calc(100vh - 100px);
+   padding: 0 20px;
+    &__wrapper {
+      padding-top: 20px; 
+      & a {
+        text-decoration: none;
+      }
+      &__title{
+        // @include box(260px, null, 5px, 15px, $sidebar-white)
+        width: 260px;
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: $sidebar-white;
+        text-decoration: none;
+      }
+      &__message {
+        @include box(260px, null,  40px, 11px, $sidebar-white);
+      }
+    }
+  }
+}
