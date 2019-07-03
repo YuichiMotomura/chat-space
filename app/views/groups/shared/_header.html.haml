@@ -1,0 +1,13 @@
+.Main__group
+  .Main__group__info
+    %h2.Main__group__info__title
+      = @group.name
+    %ul.Main__group__info__members
+      %li.Main__group__info__members__member Member :&nbsp;
+      - members = @group.users
+      - members.each do |member|
+        %li.Main__group__info__members__member
+          = member.name
+
+  = link_to edit_group_path(1), class: 'Main__group__btn' do
+    %p Edit

@@ -1,46 +1,4 @@
 .Sidebar
   = render 'groups/shared/side_bar'
 .Main
-  .Main__group
-    .Main__group__info
-      %h2.Main__group__info__title new1
-      %ul.Main__group__info__members
-        %li.Main__group__info__members__member Member :&nbsp;
-        %li.Main__group__info__members__member yu1
-    = link_to edit_group_path(1), class: 'Main__group__btn' do
-      %p Edit
-
-    
-  .Main__messages
-    .Main__messages__wrapper
-      .Main__messages__wrapper__message
-        .Main__messages__wrapper__message__info
-          .Main__messages__wrapper__message__info__userName
-            yu1
-          .Main__messages__wrapper__message__info__createdAt
-            2019/06/17(Sat)18:59:15
-        .Main__messages__wrapper__message__text
-          さあ頑張ろうぜ！負けるなよ！
-      .Main__messages__wrapper__message
-        .Main__messages__wrapper__message__info
-          .Main__messages__wrapper__message__info__userName
-            yu1
-          .Main__messages__wrapper__message__info__createdAt
-            2019/06/17(Sat)18:59:15
-        .Main__messages__wrapper__message__text
-          さあ頑張ろうぜ！負けるなよ！
-        
-  .Main__form
-    %form
-      %ul
-        %li.Main__form__textarea
-          %ul
-            %li.Main__form__textarea__input
-              %input{type: "text", name: "message", placeholder: "type a message"}
-            %li.Main__form__textarea__icon
-              %label
-                %span{title: "ファイルを選択"}
-                  = fa_icon 'photo'
-                %input{type: "file", name: "image", class: "Main__form__textarea__icon__hidden"}
-        %li.Main__form__sendBtn      
-          %input{type: "submit", value: "Send"}
+  

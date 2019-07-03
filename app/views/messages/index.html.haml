@@ -1,0 +1,24 @@
+.Sidebar
+  = render 'groups/shared/side_bar'
+
+.Main
+  = render 'groups/shared/header'
+
+  .Main__messages
+    .Main__messages__wrapper
+      = render @messages
+        
+  .Main__form
+    -# messagesはgroupにネストされている（親:group, 子:messages）
+    = form_for [@group, @message] do |f|
+      %ul
+        %li.Main__form__textarea
+          %ul
+            %li
+              = f.text_field :content, class: 'Main__form__textarea__input',placeholder: "type a message"
+            %li
+              = f.label :image, class: 'Main__form__textarea__icon' do
+                = fa_icon 'photo'
+                = f.file_field :image, class: 'Main__form__textarea__icon__hidden'
+        %li.Main__form__sendBtn
+          = f.submit 'Send'
