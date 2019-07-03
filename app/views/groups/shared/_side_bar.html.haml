@@ -13,6 +13,7 @@
     - current_user.groups.each do |group|
       = link_to group_messages_path(group) do
         .Sidebar__indexes__wrapper__title
-          =group.name
+          = group.name
         .Sidebar__indexes__wrapper__message
-          テストです。
+          =group.show_last_message
+          -# groupモデルにインタンスメソッドを定義している
