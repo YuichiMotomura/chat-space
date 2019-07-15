@@ -20,5 +20,5 @@
               = f.label :image, class: 'Main__form__textarea__icon' do
                 = fa_icon 'photo'
                 = f.file_field :image, class: 'Main__form__textarea__icon__hidden'
-        %li.Main__form__sendBtn
-          = f.submit 'Send'
+        %li
+          = f.submit 'Send', class: 'Main__form__sendBtn'

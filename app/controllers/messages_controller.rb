@@ -7,16 +7,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # @group.messages.new が今ひとつ..
-    # 保存に成功した場合と失敗した場合で分岐
     @message = @group.messages.new(message_params)
-    if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
-    else
-      @messages = @group.messages.includes(:user)
-      flash.now[:alert] = 'メッセージを入力して下さい'
-      render  :index
+    @message.save
+  
+    respond_to do |format|
+      format.html
+      format.json
     end
+
   end
 
   private
