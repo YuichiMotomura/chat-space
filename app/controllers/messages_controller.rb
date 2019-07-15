@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   before_action :set_group
   def index
     @message = Message.new
-    # @group.messagesの個々のメッセージのuserをincludesで取得
     @messages = @group.messages.includes(:user)
   end
 

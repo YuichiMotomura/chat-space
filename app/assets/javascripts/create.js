@@ -43,9 +43,10 @@ $(function() {
     .done(function(post) {
       var html1 = buildPost(post);
       var html2 = appendFalshMsg("メッセージが送信されました");
+      var form = $('#new_message')[0];
       $('.Main__messages__wrapper').append(html1);
       $('.notification').append(html2);
-      $('#message_content').val('');
+      form.reset();
       $('.Main__messages').animate({
         scrollTop: $('.Main__messages')[0].scrollHeight
       }, "fast");
@@ -53,7 +54,6 @@ $(function() {
     .fail(function(){
       alert("メッセージを入力してください");
     })
-
     .always(function(){
       $('.Main__form__sendBtn').removeAttr("disabled");
     })
