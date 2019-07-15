@@ -28,12 +28,10 @@ $(function() {
 
 
   $("#new_message").on("submit", function(e) {
-    // preventで、元のmessages#createは呼ばないようにする
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action");
 
-    // Ajaxで、messages#createを呼ぶ
     $.ajax({
       url: url,
       type: "POST",
@@ -55,7 +53,7 @@ $(function() {
     .fail(function(){
       alert("メッセージを入力してください");
     })
-    // 送信後に,SENDボタンがdisabledになるのを防ぐ
+
     .always(function(){
       $('.Main__form__sendBtn').removeAttr("disabled");
     })
