@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
   def index
+    user = params[:user]
+    @users = User.where('name like ?', "%#{user}%").where.not(id: current_user) if user.length > 0
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
   end
 
   def edit
