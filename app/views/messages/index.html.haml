@@ -9,8 +9,7 @@
       = render @messages
         
   .Main__form
-    -# messagesはgroupにネストされている（親:group, 子:messages）
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], remote: true do |f|
       %ul
         %li.Main__form__textarea
           %ul
