@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
   def index
+    @users = User.where('name like ?', "%#{params[:user]}%").where.not(id: current_user) if params[:user].length > 0
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
   end
 
   def edit
   end
 
-  # ユーザー変更処理(update)出来た場合と出来なかった場合の分岐
   def update
     if current_user.update(user_params)
       redirect_to root_path
