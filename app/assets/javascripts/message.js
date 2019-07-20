@@ -1,55 +1,23 @@
 $(function() {
   var buildMessageHTML = function(message) {
-    if (message.content && message.image.url) {
-      var html = `
-      <div class="Main__messages__wrapper__message">
-        <div class="Main__messages__wrapper__message__info" data-message-id="${message.id}">
-          <div class="Main__messages__wrapper__message__info__userName">
-            ${message.user_name}
-          </div>
-          <div class="Main__messages__wrapper__message__info__createdAt">
-            ${message.created_at}
-          </div>
+    var content = message.content ? `<p>${message.content}</p>` : "";
+    var image = message.image.url ? `<img src="${message.image.url}" alt="${message.image}">` : "";
+    var html = `
+    <div class="Main__messages__wrapper__message">
+      <div class="Main__messages__wrapper__message__info" data-message-id="${message.id}">
+        <div class="Main__messages__wrapper__message__info__userName">
+          ${message.user_name}
         </div>
-        <div class="Main__messages__wrapper__message__text">
-          <p>${message.content}</p>
-          <img src="${message.image.url}" alt="${message.image}">
+        <div class="Main__messages__wrapper__message__info__createdAt">
+          ${message.created_at}
         </div>
       </div>
-      `
-    } else if (message.content) {
-      var html = `
-      <div class="Main__messages__wrapper__message">
-        <div class="Main__messages__wrapper__message__info" data-message-id="${message.id}">
-          <div class="Main__messages__wrapper__message__info__userName">
-            ${message.user_name}
-          </div>
-          <div class="Main__messages__wrapper__message__info__createdAt">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="Main__messages__wrapper__message__text">
-          <p>${message.content}</p>
-        </div>
+      <div class="Main__messages__wrapper__message__text">
+        ${content}
+        ${image}
       </div>
-      `
-    } else if (message.image) {
-      var html = `
-      <div class="Main__messages__wrapper__message">
-        <div class="Main__messages__wrapper__message__info" data-message-id="${message.id}">
-          <div class="Main__messages__wrapper__message__info__userName">
-            ${message.user_name}
-          </div>
-          <div class="Main__messages__wrapper__message__info__createdAt">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="Main__messages__wrapper__message__text">
-          <img src="${message.image.url}" alt="${message.image}">
-        </div>
-      </div>
-      `
-    };
+    </div>
+    `
     return html;
   }
 
@@ -76,7 +44,7 @@ $(function() {
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新に失敗しました');
     })
   };
   if(document.URL.match(/groups\/\w+\/messages/)) {
