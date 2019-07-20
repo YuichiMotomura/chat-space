@@ -9,9 +9,9 @@
       = render @messages
         
   .Main__form
-    = form_for [@group, @message], remote: true do |f|
+    = form_for [@group, @message] do |f|
       %ul
-        %li.Main__form__textarea
+        %li.Main__form__textarea 
           %ul
             %li
               = f.text_field :content, class: 'Main__form__textarea__input',placeholder: "type a message"
