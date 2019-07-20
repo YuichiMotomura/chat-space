@@ -4,7 +4,7 @@ $(function() {
     var image = post.image.url ? `<img src="${post.image_url}" alt="${post.image}">` : "";
     var html =
               `<div class="Main__messages__wrapper__message">
-                <div class="Main__messages__wrapper__message__info">
+                <div class="Main__messages__wrapper__message__info" data-message-id="${post.id}">
                   <div class="Main__messages__wrapper__message__info__userName">
                     ${post.name}
                   </div>
