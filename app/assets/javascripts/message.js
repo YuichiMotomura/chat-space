@@ -53,11 +53,8 @@ $(function() {
     return html;
   }
 
-
   var reloadMessages = function() {
-    // ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.Main__messages__wrapper__message__info:last').data('message-id');
-    console.log(last_message_id);
     
     $.ajax({
       url: './api/messages',
@@ -66,18 +63,13 @@ $(function() {
       data: {id: last_message_id},
     })
     .done(function(messages) {
-      // debugger;
-      // 追加するHTMLの入れ物を作る
       if (messages.length !== 0) {
         var insertHTML = '';
-        // 配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
         messages.forEach(function(message) {
           insertHTML += buildMessageHTML(message);
         })
-        // メッセージを追加
         $(".Main__messages__wrapper").append(insertHTML);
 
-        // 新しく追加されたメッセ分だけスクロールする
         $('.Main__messages').animate({
           scrollTop: $('.Main__messages')[0].scrollHeight
         }, "fast");
