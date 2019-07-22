@@ -2,7 +2,7 @@
 app_path = File.expand_path('../../', __FILE__)
 
 # アプリケーションサーバの性能
-worker_process 1
+worker_processes 1
 
 # アプリケーションが設置されているディレクトリ
 working_directory app_path
