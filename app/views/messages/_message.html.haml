@@ -3,7 +3,7 @@
     .Main__messages__wrapper__message__info__userName
       = message.user.name
     .Main__messages__wrapper__message__info__createdAt
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.strftime("%Y/%m/%d(%a) %H:%M:%S")
   .Main__messages__wrapper__message__text
     - if message.content.present?
       %p
