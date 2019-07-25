@@ -1,5 +1,5 @@
 require 'carrierwave/storage/abstract'
-require 'carrierwave/strage/file'
+require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
